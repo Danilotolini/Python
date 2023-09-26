@@ -1,0 +1,108 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPjhaH4SETAFCXXFmspGPBJ",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Danilotolini/Danilao/blob/main/Python%20Panda\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "ES9OhCgdWdXl"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "from google.colab import files\n",
+        "uploaded = files.upload()\n",
+        "for fn in uploaded.keys():\n",
+        " print('Arquivo\"{name}\"com tamanho de {length} bytes'.format(name = fn, length = len(uploaded[fn])))\n",
+        "Dados1 = pd.read_excel(\"dados.xlsx\")\n",
+        "print(Dados1)\n",
+        "Dados1.shape\n",
+        "Dados1.head()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "Alunos = {\"Nome\" : [\"Marcelo\", \"Lucas\", \"Cynthia\", \"Helena\"], \"Media\" : [4,7,5.5,9], \"Status\" : [\"Reprovado\", \"Aprovado\", \"Reprovado\", \"Aprovado\"]}\n",
+        "df1 = pd.DataFrame(Alunos)\n",
+        "print(df1.shape)\n",
+        "print(df1)\n",
+        "print(df1.describe())"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JUhv5_kQhtlC",
+        "outputId": "61a6fe86-c0b1-4217-823f-1d39a84de6b7"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(4, 3)\n",
+            "      Nome  Media     Status\n",
+            "0  Marcelo    4.0  Reprovado\n",
+            "1    Lucas    7.0   Aprovado\n",
+            "2  Cynthia    5.5  Reprovado\n",
+            "3   Helena    9.0   Aprovado\n",
+            "          Media\n",
+            "count  4.000000\n",
+            "mean   6.375000\n",
+            "std    2.136001\n",
+            "min    4.000000\n",
+            "25%    5.125000\n",
+            "50%    6.250000\n",
+            "75%    7.500000\n",
+            "max    9.000000\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "files.upload()\n",
+        "\n",
+        "dados2 = pd.read_csv(\"growth.csv\")\n",
+        "print(dados2.shape)\n",
+        "dados2.head(4)"
+      ],
+      "metadata": {
+        "id": "cCv5kHCNfUzi"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
